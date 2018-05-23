@@ -239,3 +239,10 @@ h1, h2, h3, h4, h5, h6 {
   width:24px;
   padding:16px;
 }
+
+a.active {
+  cursor:pointer;
+  text-decoration:none;
+  pointer-events: none;
+  opacity:0.5;
+}

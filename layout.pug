@@ -1,8 +1,94 @@
-doctype
-html(lang="en-AU")
+doctype html
+block vars
+html(class="no-js", lang="en-au")
 	head
-		title #{pageTitle}
+		meta(charset="utf-8")
+		<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge'><![endif]-->
+		title #{title} | Walk Fourward
+		meta(name="description"
+			content="FOURWARD offers unrivaled dog walking and training services. Serving Perth, Western Australia.")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover")
+		link(rel="apple-touch-icon" href="icon.png")
+		link(rel="icon" sizes="32x32" href="favicon-32x32.png")
+		link(rel="icon" sizes="16x16" href="favicon-16x16.png")
+		link(rel="stylesheet" href="css/main.css")
+		link(href="https://fonts.googleapis.com/css?family=Enriqueta:700|Noticia+Text" rel="stylesheet")
 
 	body
-		block main
-			p hello world
+		<!--[if lt IE 9]>
+			p.browserupgrade
+				| You are using an #[strong outdated] browser. Please
+				|
+				a(href="http://browsehappy.com/") upgrade your browser
+				|  to improve your experience.
+		<![endif]-->
+
+
+
+		block header
+			header
+
+				h1.top
+					.logo
+						include svg/paws.svg
+					| Walk Fourward
+
+				mixin navLink(link, name)
+					a(
+						href=link
+						class={active: name === current}
+					) #{name}
+						|
+
+				menu
+					+navLink('/', 'Home')
+					+navLink('services.html', 'Services')
+					+navLink('testimonials.html', 'Testimonials')
+					+navLink('meet-the-team.html', 'The Team')
+					+navLink('gallery.html', 'Gallery')
+					+navLink('faqs.html', 'FAQs')
+
+					a(href="mailto:walkfourward@gmail.com") walkfourward@gmail.com
+					a(href="tel:0466962747") 0466962747
+
+					a(data-title="Instagram" href="https://www.instagram.com/walkfourward/")
+						include svg/instagram.svg
+					a(data-title="Facebook" href="https://www.facebook.com/walkfourward/")
+						include svg/facebook.svg
+					a(data-title="Twitter" href="https://twitter.com/______")
+						include svg/twitter.svg
+					a(data-title="YouTube" href="https://www.youtube.com/channel/UC3RKVa9MdLlyFP6wpvY_uPQ")
+						include svg/youtube.svg
+
+
+		main
+			block main
+
+		footer
+			p
+				a(href="mailto:walkfourward@gmail.com") walkfourward@gmail.com
+			p
+				a(href="tel:0466962747") 0466962747
+			div.social
+				a(data-title="Instagram" href="https://www.instagram.com/walkfourward/")
+					include svg/instagram.svg
+				a(data-title="Facebook" href="https://www.facebook.com/walkfourward/")
+					include svg/facebook.svg
+				a(data-title="Twitter" href="https://twitter.com/______")
+					include svg/twitter.svg
+				a(data-title="YouTube" href="https://www.youtube.com/channel/UC3RKVa9MdLlyFP6wpvY_uPQ")
+					include svg/youtube.svg
+
+			.dark
+				p ©2017-2018 by FOURWARD dog walking and leash training.
+
+
+		//-
+			script(
+				src="https://code.jquery.com/jquery-3.2.1.min.js"
+				integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+				crossorigin="anonymous")
+			script.
+				window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\\/script>')
+		script
+			include js/index-min.js
