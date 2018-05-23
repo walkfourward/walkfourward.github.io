@@ -700,3 +700,6 @@ a.active {
   text-decoration: none;
   pointer-events: none;
   opacity: 0.5; }
+
+menu a {
+  text-decoration: none; }
