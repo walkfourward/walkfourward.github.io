@@ -1,0 +1,13 @@
+mixin navLink(link, name)
+	li
+		a(
+			href=link
+			class={active: name === current}
+		) #{name}
+
+ul
+	+navLink('#', 'name')
+	+navLink('#', 'name2')
+	+navLink('#', 'name3')
+	+navLink('#', 'name4')
+

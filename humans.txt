@@ -1,0 +1,24 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Dan Wood -- Webmaster -- @danwood
+
+# THANKS
+
+
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5
+    HTML5 Boilerplate 6.0.1
+    Apache Server Configs, jQuery, Normalize.css
+    ImageOptim (with Guetzli)
+    Sketch and Opacity for hand-made SVG creation
+    https://www.vectorizer.io for automated SVG creation
+    https://jakearchibald.github.io/svgomg/ to compress the SVGs
+    https://pugjs.org/
+    Chrome CSS coverage tool https://developers.google.com/web/updates/2017/04/devtools-release-notes
+    CSSMinifier.com (until SASS knows about new env settings in CSS)
+    CodeKit

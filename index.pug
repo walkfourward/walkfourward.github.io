@@ -1,0 +1,128 @@
+doctype html
+html(class="no-js", lang="en-au")
+	head
+		meta(charset="utf-8")
+		<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge'><![endif]-->
+		title Home | Walk Fourward
+		meta(name="description"
+			content="FOURWARD offers unrivaled dog walking and training services. Serving Perth, Western Australia.")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover")
+		link(rel="apple-touch-icon" href="icon.png")
+		link(rel="icon" sizes="32x32" href="favicon-32x32.png")
+		link(rel="icon" sizes="16x16" href="favicon-16x16.png")
+		link(rel="stylesheet" href="css/main.css")
+		link(href="https://fonts.googleapis.com/css?family=Enriqueta:700|Noticia+Text" rel="stylesheet")
+
+	body
+		<!--[if lt IE 9]>
+			p.browserupgrade
+				| You are using an #[strong outdated] browser. Please
+				|
+				a(href="http://browsehappy.com/") upgrade your browser
+				|  to improve your experience.
+		<![endif]-->
+
+
+
+		header
+
+			h1.top
+				.logo
+					include svg/paws.svg
+				| Walk Fourward
+			menu
+				a Home
+				a Services
+				a Testimonials
+				a Meet the Team
+				a More
+				a(href="mailto:walkfourward@gmail.com") walkfourward@gmail.com
+				a(href="tel:0466962747") 0466962747
+
+				a(data-title="Instagram" href="https://www.instagram.com/walkfourward/")
+					include svg/instagram.svg
+				a(data-title="Facebook" href="https://www.facebook.com/walkfourward/")
+					include svg/facebook.svg
+				a(data-title="Twitter" href="https://twitter.com/______")
+					include svg/twitter.svg
+				a(data-title="YouTube" href="https://www.youtube.com/channel/UC3RKVa9MdLlyFP6wpvY_uPQ")
+					include svg/youtube.svg
+			.hero
+				article
+					img(src="img/hero.jpg" alt="Legs and dog")
+					h4 Your pet's second best friend...
+					h1 Walk Fourward
+					p
+						| Whether you are on vacation, traveling for business, or it's just another day at the office, we will be there help provide you with your pets needs. The bonus for you is absolute peace of mind knowing that your furry friend is receiving plenty of love, exercise, and training while you’re out.
+					p
+						| Serving Perth, Western Australia.
+
+
+
+		main
+
+			section
+				article
+					header
+						include svg/pup.svg
+						h2 Caring for Your Furry Friend
+						h3 Keeping You and Your Pets Happy
+					p
+						| FOURWARD offers unrivaled dog walking and training services. Your animal will get the care you need when you need it. Untrained, and energetic animals are a hassle to live with, but you still love them anyway. Puppy socialization can make life a bit easier for you without having to worry about the detailed training aspects of puppyhood. With FORWARD pet sitting you know that your pet are in good hands while you are away. Lastly, by choosing FORWARD for dog walking and leash training, your dog will learn to behave better on leash while getting the exercise it needs, making it easier for you to spend quality time with your precious pooch.
+					p
+						a BOOK ONLINE TODAY!
+				article
+					header
+						img.rounded(src="img/circle1.jpg" alt="two dogs playing on a field")
+						h2 Dog Walking &amp; Leash Training
+					p
+						| Not spending as much time as you’d like to with your pet? Don’t let your busy schedule interfere with your furry friend’s well-being. Give your animal the care and attention they deserve by taking advantage of FOURWARD dog walking and leash training. Your dog will be walked one-on-one and trained to behave better on leash through positive reinforcement techniques. After, both your dog's mind and body will be stimulated creating one tired pup!
+				article
+					header
+						img.rounded(src="img/circle2.jpg" alt="close-up of a cat looking to our right")
+						h2 Pet Sitting
+					p
+						| With FOURWARD you can be assured that your pets will be in good hands. My experience over the years of pet sitting animals anywhere from sheep to puppies has helped me perfect methods and techniques, so you can rest assured that your pet will receive the encouragement and attentiveness they need. As a vet student, your pet will be in knowledgeable and experienced hands. FOURWARD does mainly in home pet sitting with a few exceptions. Contact for more details.
+
+				article
+					header
+						img.rounded(src="img/circle3.jpg" alt="Puppy with two dogs in the background")
+						h2 Puppy Socialization
+					p
+						|  With intent to socialize, FOURWARD will walk your puppy and expose him/her to different scenarios, people, dogs, and places while training them to enjoy these without fear. Socialization is a great option if you have a young dog who is still unsure or scared of some situations. Book a walking today and help your furry friend over come his fears!
+
+				article
+					header
+						img.rounded(src="img/circle4.jpg" alt="legs of dog-walker giving a treat to dog on leash")
+						h2 Dog Training
+					p
+						| Whether your dog is aggressive, weak on his recall skills, or just needs some extra obedience work, I can help. Contact now for a free quote.
+			section
+				article
+					header
+						<iframe width="100%" height="300px" frameborder="0" scrolling="no" title="Google Maps" aria-label="Google Maps" src="https://static.parastorage.com/services/santa/1.2682.26/static/external/googleMap.html?language=en"></iframe>
+						h2 Get In Touch
+					p
+						| I love animals and have years of experience working with them. You can trust me to provide a safe, comfortable, fun, and healthy environment for your furry friend. Whether it’s taking them for walks, coming by to feed them, or providing at-home care, I’ll watch over your pet as if it were my own.
+					p
+						| FORM TK
+		footer
+			p
+				a(href="mailto:walkfourward@gmail.com") walkfourward@gmail.com
+			p
+				a(href="tel:0466962747") 0466962747
+			p
+				| SOCIAL ICONS
+			.dark
+				p ©2017-2018 by FOURWARD dog walking and leash training.
+
+
+		//-
+			script(
+				src="https://code.jquery.com/jquery-3.2.1.min.js"
+				integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+				crossorigin="anonymous")
+			script.
+				window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\\/script>')
+		script
+			include js/index-min.js
