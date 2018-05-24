@@ -30,6 +30,7 @@
           <div class="gallery"><a href="img/gallery1.jpg" alt=""><img class="thumb" src="img/thumbs/gallery1.jpg"></a><a href="img/gallery2.jpg" alt=""><img class="thumb" src="img/thumbs/gallery2.jpg"></a><a href="img/gallery3.jpg" alt=""><img class="thumb" src="img/thumbs/gallery3.jpg"></a><a href="img/gallery4.jpg" alt=""><img class="thumb" src="img/thumbs/gallery4.jpg"></a><a href="img/gallery5.jpg" alt=""><img class="thumb" src="img/thumbs/gallery5.jpg"></a><a href="img/gallery6.jpg" alt=""><img class="thumb" src="img/thumbs/gallery6.jpg"></a><a href="img/gallery7.jpg" alt=""><img class="thumb" src="img/thumbs/gallery7.jpg"></a><a href="img/gallery8.jpg" alt=""><img class="thumb" src="img/thumbs/gallery8.jpg"></a><a href="img/gallery9.jpg" alt=""><img class="thumb" src="img/thumbs/gallery9.jpg"></a><a href="img/gallery10.jpg" alt=""><img class="thumb" src="img/thumbs/gallery10.jpg"></a><a href="img/gallery11.jpg" alt=""><img class="thumb" src="img/thumbs/gallery11.jpg"></a><a href="img/gallery12.jpg" alt=""><img class="thumb" src="img/thumbs/gallery12.jpg"></a><a href="img/gallery13.jpg" alt=""><img class="thumb" src="img/thumbs/gallery13.jpg"></a><a href="img/gallery14.jpg" alt=""><img class="thumb" src="img/thumbs/gallery14.jpg"></a><a href="img/gallery15.jpg" alt=""><img class="thumb" src="img/thumbs/gallery15.jpg"></a><a href="img/gallery16.jpg" alt=""><img class="thumb" src="img/thumbs/gallery16.jpg"></a><a href="img/gallery17.jpg" alt=""><img class="thumb" src="img/thumbs/gallery17.jpg"></a><a href="img/gallery18.jpg" alt=""><img class="thumb" src="img/thumbs/gallery18.jpg"></a><a href="img/gallery19.jpg" alt=""><img class="thumb" src="img/thumbs/gallery19.jpg"></a><a href="img/gallery20.jpg" alt=""><img class="thumb" src="img/thumbs/gallery20.jpg"></a></div>
         </article>
       </section>
+      <div class="lightbox" style="display:none"><img id="lightbox-image" src="" style="display:none"></div>
     </main>
     <footer>
       <p><a href="mailto:walkfourward@gmail.com">walkfourward@gmail.com</a></p>
@@ -40,5 +41,45 @@
       </div>
     </footer>
     <script>document.documentElement.className=document.documentElement.className.replace("no-js","js");</script>
+    <script>
+      var onThumbnailsClick = function(e) {
+      	e = e || window.event;
+      	e.preventDefault();
+      
+      	var eTarget = e.target || e.srcElement;
+      
+      	var href = eTarget.parentNode.getAttribute("href");
+      
+      	var lightbox = document.querySelectorAll( '.lightbox' )[0];
+      	lightbox.style.display = '';	// show
+      
+      	var image = document.querySelectorAll( '#lightbox-image' )[0];
+      	image.src = href;
+      	image.style.display = '';	// show
+      };
+      
+      var onCloseClick = function(e) {
+      	e = e || window.event;
+      	e.preventDefault();
+      
+      	var lightbox = document.querySelectorAll( '.lightbox' )[0];
+      	lightbox.style.display = 'none';
+      	var image = document.querySelectorAll( '#lightbox-image' )[0];
+      	image.src = '';
+      	image.style.display = 'none';
+      };
+      
+      var galleryElements = document.querySelectorAll( '.gallery' );
+      for(var i = 0, l = galleryElements.length; i < l; i++) {
+      	galleryElements[i].onclick = onThumbnailsClick;
+      }
+      
+      var closeElements = document.querySelectorAll( '.lightbox' );
+      for(var i = 0, l = closeElements.length; i < l; i++) {
+      	closeElements[i].onclick = onCloseClick;
+      }
+      
+      
+    </script>
   </body>
 </html>

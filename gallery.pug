@@ -5,9 +5,45 @@ block vars
 	- var current = 'Gallery'
 
 
+block append scripts
+	script.
 
+		var onThumbnailsClick = function(e) {
+			e = e || window.event;
+			e.preventDefault();
 
+			var eTarget = e.target || e.srcElement;
 
+			var href = eTarget.parentNode.getAttribute("href");
+
+			var lightbox = document.querySelectorAll( '.lightbox' )[0];
+			lightbox.style.display = '';	// show
+
+			var image = document.querySelectorAll( '#lightbox-image' )[0];
+			image.src = href;
+			image.style.display = '';	// show
+		};
+
+		var onCloseClick = function(e) {
+			e = e || window.event;
+			e.preventDefault();
+
+			var lightbox = document.querySelectorAll( '.lightbox' )[0];
+			lightbox.style.display = 'none';
+			var image = document.querySelectorAll( '#lightbox-image' )[0];
+			image.src = '';
+			image.style.display = 'none';
+		};
+
+		var galleryElements = document.querySelectorAll( '.gallery' );
+		for(var i = 0, l = galleryElements.length; i < l; i++) {
+			galleryElements[i].onclick = onThumbnailsClick;
+		}
+
+		var closeElements = document.querySelectorAll( '.lightbox' );
+		for(var i = 0, l = closeElements.length; i < l; i++) {
+			closeElements[i].onclick = onCloseClick;
+		}
 
 
 block main
@@ -56,3 +92,5 @@ block main
 					img.thumb(src="img/thumbs/gallery19.jpg")
 				a(href="img/gallery20.jpg" alt="")
 					img.thumb(src="img/thumbs/gallery20.jpg")
+	.lightbox(style="display:none")
+		img#lightbox-image(src="" style="display:none")
