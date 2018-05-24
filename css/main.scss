@@ -161,6 +161,10 @@ img.rounded {
   display:inline-block;
 }
 
+a.tel:before {
+  content:'☎ ';
+}
+
 /* ====== Specific Sections ===== */
 
 
@@ -212,6 +216,7 @@ menu {
     text-decoration:none;
     color:white;
     padding:0.5em 1.2em;
+    display:inline-block;
   }
 
   a.active {
@@ -228,13 +233,6 @@ menu {
 
 // Services
 
-.service {
-  border:1px solid gray;
-  padding:2em;
-  & * {
-    padding:1em;
-  }
-}
 .category {
   @extend .header;
   font-size:2em;
@@ -257,6 +255,10 @@ menu {
   text-align:left;
 }
 
+.service * {
+      padding:0.5em;
+    }
+
 // Testimonials
 
 p.source {
@@ -276,10 +278,18 @@ p.source {
 
 @media only screen and (max-width:599px) {
 
+  blockquote {
+    margin:0;
+  }
 
 }
 
 @media only screen and (min-width:600px) {
+
+  .service {
+    border:1px solid gray;
+    padding:2em;
+  }
 
   .one-third {
     width:33.33%;

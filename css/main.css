@@ -640,6 +640,9 @@ img.rounded {
 .logo {
   display: inline-block; }
 
+a.tel:before {
+  content: '☎ '; }
+
 /* ====== Specific Sections ===== */
 .hero {
   width: 100%;
@@ -676,7 +679,8 @@ menu {
   menu a {
     text-decoration: none;
     color: white;
-    padding: 0.5em 1.2em; }
+    padding: 0.5em 1.2em;
+    display: inline-block; }
   menu a.active {
     cursor: pointer;
     text-decoration: none;
@@ -684,12 +688,6 @@ menu {
     opacity: 0.5; }
   menu svg {
     width: 2em; }
-
-.service {
-  border: 1px solid gray;
-  padding: 2em; }
-  .service * {
-    padding: 1em; }
 
 .category {
   font-size: 2em;
@@ -708,11 +706,21 @@ menu {
 .description {
   text-align: left; }
 
+.service * {
+  padding: 0.5em; }
+
 p.source, .source.description {
   font-style: italic; }
 
 /* ===== BREAKPOINTS … general (under 600 for mobile, 600+ for desktop) and specialized ===== */
+@media only screen and (max-width: 599px) {
+  blockquote {
+    margin: 0; } }
+
 @media only screen and (min-width: 600px) {
+  .service {
+    border: 1px solid gray;
+    padding: 2em; }
   .one-third {
     width: 33.33%;
     float: left;
