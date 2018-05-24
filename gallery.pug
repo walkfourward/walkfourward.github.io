@@ -40,12 +40,58 @@ block append scripts
 		var options = {
 		    // optionName: 'option value'
 		    // for example:
-		    index: 0 // start at first slide
+		    // index: 0 // start at first slide
 		};
 
 		// Initializes and opens PhotoSwipe
 		var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
 		gallery.init();
+
+		var onThumbnailsClick = function(e) {
+		    e = e || window.event;
+		    e.preventDefault ? e.preventDefault() : e.returnValue = false;
+
+		    var eTarget = e.target || e.srcElement;
+
+		    var clickedListItem = closest(eTarget, function(el) {
+		        return el.tagName === 'IMG';
+		    });
+
+		    if(!clickedListItem) {
+		        return;
+		    }
+
+		    var clickedGallery = clickedListItem.parentNode;
+
+		    var childNodes = clickedListItem.parentNode.childNodes,
+		        numChildNodes = childNodes.length,
+		        nodeIndex = 0,
+		        index;
+
+		    for (var i = 0; i < numChildNodes; i++) {
+		        if(childNodes[i].nodeType !== 1) {
+		            continue;
+		        }
+
+		        if(childNodes[i] === clickedListItem) {
+		            index = nodeIndex;
+		            break;
+		        }
+		        nodeIndex++;
+		    }
+
+		    if(index >= 0) {
+		        openPhotoSwipe( index, clickedGallery );
+		    }
+		    return false;
+		};
+
+		var galleryElements = document.querySelectorAll( '.gallery' );
+		for(var i = 0, l = galleryElements.length; i < l; i++) {
+			galleryElements[i].setAttribute('data-pswp-uid', i+1);
+			galleryElements[i].onclick = onThumbnailsClick;
+		}
+
 
 
 
@@ -54,62 +100,65 @@ block append scripts
 
 
 block main
-	h1 Meet the Critters!
-	p Feathery, scaley, hooved or tall, we care for creatures great and small.
-	img(src="img/thumbs/gallery1.jpg")
-	img(src="img/thumbs/gallery2.jpg")
-	img(src="img/thumbs/gallery3.jpg")
-	img(src="img/thumbs/gallery4.jpg")
-	img(src="img/thumbs/gallery5.jpg")
-	img(src="img/thumbs/gallery6.jpg")
-	img(src="img/thumbs/gallery7.jpg")
-	img(src="img/thumbs/gallery8.jpg")
-	img(src="img/thumbs/gallery9.jpg")
-	img(src="img/thumbs/gallery10.jpg")
-	img(src="img/thumbs/gallery11.jpg")
-	img(src="img/thumbs/gallery12.jpg")
-	img(src="img/thumbs/gallery13.jpg")
-	img(src="img/thumbs/gallery14.jpg")
-	img(src="img/thumbs/gallery15.jpg")
-	img(src="img/thumbs/gallery16.jpg")
-	img(src="img/thumbs/gallery17.jpg")
-	img(src="img/thumbs/gallery18.jpg")
-	img(src="img/thumbs/gallery19.jpg")
-	img(src="img/thumbs/gallery20.jpg")
-	<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-		<div class="pswp__bg"></div>
-		<div class="pswp__scroll-wrap">
-			<div class="pswp__container">
-				<div class="pswp__item"></div>
-				<div class="pswp__item"></div>
-				<div class="pswp__item"></div>
-			</div>
-			<div class="pswp__ui pswp__ui--hidden">
-				<div class="pswp__top-bar">
+	section
+		article.wide.gallery
+			h1 Meet the Critters!
+			p Feathery, scaley, hooved or tall, we care for creatures great and small.
+			.gallery
+				img.thumb(src="img/thumbs/gallery1.jpg")
+				img.thumb(src="img/thumbs/gallery2.jpg")
+				img.thumb(src="img/thumbs/gallery3.jpg")
+				img.thumb(src="img/thumbs/gallery4.jpg")
+				img.thumb(src="img/thumbs/gallery5.jpg")
+				img.thumb(src="img/thumbs/gallery6.jpg")
+				img.thumb(src="img/thumbs/gallery7.jpg")
+				img.thumb(src="img/thumbs/gallery8.jpg")
+				img.thumb(src="img/thumbs/gallery9.jpg")
+				img.thumb(src="img/thumbs/gallery10.jpg")
+				img.thumb(src="img/thumbs/gallery11.jpg")
+				img.thumb(src="img/thumbs/gallery12.jpg")
+				img.thumb(src="img/thumbs/gallery13.jpg")
+				img.thumb(src="img/thumbs/gallery14.jpg")
+				img.thumb(src="img/thumbs/gallery15.jpg")
+				img.thumb(src="img/thumbs/gallery16.jpg")
+				img.thumb(src="img/thumbs/gallery17.jpg")
+				img.thumb(src="img/thumbs/gallery18.jpg")
+				img.thumb(src="img/thumbs/gallery19.jpg")
+				img.thumb(src="img/thumbs/gallery20.jpg")
+			<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+				<div class="pswp__bg"></div>
+				<div class="pswp__scroll-wrap">
+					<div class="pswp__container">
+						<div class="pswp__item"></div>
+						<div class="pswp__item"></div>
+						<div class="pswp__item"></div>
+					</div>
+					<div class="pswp__ui pswp__ui--hidden">
+						<div class="pswp__top-bar">
 
-					<div class="pswp__counter"></div>
-					<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-					<button class="pswp__button pswp__button--share" title="Share"></button>
-					<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-					<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-					<div class="pswp__preloader">
-						<div class="pswp__preloader__icn">
-							<div class="pswp__preloader__cut">
-								<div class="pswp__preloader__donut"></div>
+							<div class="pswp__counter"></div>
+							<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+							<button class="pswp__button pswp__button--share" title="Share"></button>
+							<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+							<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+							<div class="pswp__preloader">
+								<div class="pswp__preloader__icn">
+									<div class="pswp__preloader__cut">
+										<div class="pswp__preloader__donut"></div>
+									</div>
+								</div>
 							</div>
+						</div>
+						<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+							<div class="pswp__share-tooltip"></div>
+						</div>
+						<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+						</button>
+						<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+						</button>
+						<div class="pswp__caption">
+							<div class="pswp__caption__center"></div>
 						</div>
 					</div>
 				</div>
-				<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-					<div class="pswp__share-tooltip"></div>
-				</div>
-				<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-				</button>
-				<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-				</button>
-				<div class="pswp__caption">
-					<div class="pswp__caption__center"></div>
-				</div>
 			</div>
-		</div>
-	</div>

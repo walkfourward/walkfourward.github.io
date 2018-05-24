@@ -712,10 +712,23 @@ menu {
 p.source, .source.description {
   font-style: italic; }
 
+img.thumb {
+  object-fit: cover;
+  object-position: center;
+  width: 256px;
+  height: 256px;
+  border: 10px solid white; }
+
+.gallery {
+  text-align: left; }
+
 /* ===== BREAKPOINTS … general (under 600 for mobile, 600+ for desktop) and specialized ===== */
 @media only screen and (max-width: 599px) {
   blockquote {
-    margin: 0; } }
+    margin: 0; }
+  img.thumb {
+    width: 64px;
+    height: 64px; } }
 
 @media only screen and (min-width: 600px) {
   .service {
