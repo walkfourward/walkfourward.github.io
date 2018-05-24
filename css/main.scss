@@ -92,15 +92,29 @@ section, .safe-area {
 
 /* ===== General ===== */
 
-body {
-    font:16px/26px Helvetica, Helvetica Neue, Arial;
+body, .text {
+  font-family: 'Noticia Text', serif;
+  text-align:center;
 }
 
-/* ===== Geometry ===== */
+h1, h2, h3, h4, h5, h6, .header {
+  font-family: 'Enriqueta', serif;
+}
 
+.browserupgrade { /* Improve the formatting a bit without messing with original */
+  font-size:150%;
+  padding:1rem;
+}
 
+/* ===== Colors ===== */
 
-section {
+a { color:green; }
+
+main {
+  background:rgb(229, 240, 241);
+}
+
+next-to-side-photo {
   padding:1rem 0;
 }
 
@@ -112,27 +126,34 @@ section article { background:yellow;}
 section footer { background:green;}
 */
 
-
-
-.embed-container {
-    position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%;
-}
-
-.embed-container iframe, .embed-container object, .embed-container embed {
-    position:absolute; top:0; left:0; width:100%; height:100%;
-}
-
-/* for header and footer, full window width but indented a bit */
-
-body > footer p {
-    padding:20px 5%;
-    margin:0;
-}
-
 article {
     margin:0 auto;
     padding:2rem 2rem;  /* if we use margin above then it messes with background image */
     max-width:40rem;
+}
+
+h1 {
+  padding:1em;
+  margin:0 auto;
+}
+
+img.rounded {
+  border-radius:50%;
+  margin:0 auto;
+  max-width:100%;
+}
+
+.hero {
+  color:white;
+}
+
+.top {
+  background:white;
+  font-weight:normal;
+}
+
+.logo {
+  display:inline-block;
 }
 
 /* ====== Specific Sections ===== */
@@ -153,29 +174,100 @@ article {
     filter: brightness(75%);
 }
 
+// Footer
 
-/* ===== Colors ===== */
-
-
-
-a { color:green; }
-
-
-main {
-  background:rgb(229, 240, 241);
+.social svg {
+  width:24px;
+  padding:16px;
 }
-
 
 body > footer {
     background:#bdbdbd;
     color:white;
+
+  p {
+      padding:20px 5%;
+      margin:0;
+  }
+
+  a {
+    color:white;
+    text-decoration:none;
+  }
+}
+
+// Header
+
+menu {
+  background:#222;
+  margin:0;
+  padding:0.5em;
+
+  a {
+    text-decoration:none;
+    color:white;
+    padding:0.5em 1.2em;
+  }
+
+  a.active {
+    cursor:pointer;
+    text-decoration:none;
+    pointer-events: none;
+    opacity:0.5;
+  }
+
+  svg {
+    width:2em;
+  }
+}
+
+// Services
+
+.service {
+  border:1px solid gray;
+  padding:2em;
+  & * {
+    padding:1em;
+  }
+}
+.category {
+  @extend .header;
+  font-size:2em;
+  font-weight:normal;
+}
+.title {
+  @extend .text;
+  font-size:1.5em;
+}
+.time, .price {
+  display:inline-block;
+  padding:0 1em;
+}
+.time {
+  border-right:1px solid gray;
+}
+
+.description {
+  @extend p;
+  text-align:left;
+}
+
+// Testimonials
+
+p.source {
+  font-style:italic;
 }
 
 
-.browserupgrade { /* Improve the formatting a bit without messing with original */
-  font-size:150%;
-  padding:1rem;
-}
+
+
+
+
+
+
+
+
+
 
 /* ===== BREAKPOINTS … general (under 600 for mobile, 600+ for desktop) and specialized ===== */
 
@@ -185,68 +277,4 @@ body > footer {
 
 @media only screen and (min-width:600px) {
 
-}
-
-
-/* TO FILE */
-
-body {
-  text-align:center;
-}
-menu {
-  background:#222;
-  margin:0;
-  padding:0.5em;
-}
-menu svg {
-  width:2em;
-}
-menu a {
-  color:white;
-  padding:0.5em 1.2em;
-}
-h1 {
-  padding:1em;
-  margin:0 auto;
-}
-
-img.rounded {
-  border-radius:50%;
-  margin:0 auto;
-  max-width:100%;
-}
-
-.hero {
-  color:white;
-}
-
-body {
-  font-family: 'Noticia Text', serif;
-}
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Enriqueta', serif;
-}
-
-.top {
-  background:white;
-  font-weight:normal;
-}
-.logo {
-  display:inline-block;
-}
-
-.social svg {
-  width:24px;
-  padding:16px;
-}
-
-a.active {
-  cursor:pointer;
-  text-decoration:none;
-  pointer-events: none;
-  opacity:0.5;
-}
-
-menu a {
-  text-decoration:none;
 }

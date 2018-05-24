@@ -1,0 +1,11 @@
+{
+	"folders":
+	[
+		{
+		"path":".",
+			"follow_symlinks": false,
+			"file_exclude_patterns":[".map", "*.html", "*.css", "*.ico", "jquery*", "*.command", "*.sublime*", "*.min.js", "*.jpeg", "*.jpg", "*.png", "*.svg"],
+			"folder_exclude_patterns":["FILECACHE", "images", "plugin.icons", "img", "svg", "image-sources", "icon", "fonts", "frameworks", "*.oo3"]
+		}
+	]
+}
