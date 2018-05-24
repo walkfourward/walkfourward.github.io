@@ -130,6 +130,11 @@ article {
     margin:0 auto;
     padding:2rem 2rem;  /* if we use margin above then it messes with background image */
     max-width:40rem;
+    @extend .clearfix;
+}
+article.wide {
+  max-width:900px;
+  padding:0;
 }
 
 h1 {
@@ -267,14 +272,31 @@ p.source {
 
 
 
-
-
 /* ===== BREAKPOINTS … general (under 600 for mobile, 600+ for desktop) and specialized ===== */
 
 @media only screen and (max-width:599px) {
+
 
 }
 
 @media only screen and (min-width:600px) {
 
+  .one-third {
+    width:33.33%;
+    float:left;
+    text-align:left;
+
+    .padded {
+      padding-right:1em;
+    }
+  }
+  .two-thirds {
+    width:66.67%;
+    float:left;
+
+    img {
+      max-width:50%;
+      float:left;
+    }
+  }
 }

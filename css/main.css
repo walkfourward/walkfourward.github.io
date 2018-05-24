@@ -441,14 +441,17 @@ textarea {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-.clearfix:before,
-.clearfix:after {
+.clearfix:before, article:before,
+.clearfix:after,
+article:after {
   content: " ";
   /* 1 */
   display: table;
   /* 2 */ }
 
-.clearfix:after {
+
+.clearfix:after,
+article:after {
   clear: both; }
 
 /* ==========================================================================
@@ -614,6 +617,10 @@ article {
   /* if we use margin above then it messes with background image */
   max-width: 40rem; }
 
+article.wide {
+  max-width: 900px;
+  padding: 0; }
+
 h1 {
   padding: 1em;
   margin: 0 auto; }
@@ -705,3 +712,16 @@ p.source, .source.description {
   font-style: italic; }
 
 /* ===== BREAKPOINTS … general (under 600 for mobile, 600+ for desktop) and specialized ===== */
+@media only screen and (min-width: 600px) {
+  .one-third {
+    width: 33.33%;
+    float: left;
+    text-align: left; }
+    .one-third .padded {
+      padding-right: 1em; }
+  .two-thirds {
+    width: 66.67%;
+    float: left; }
+    .two-thirds img {
+      max-width: 50%;
+      float: left; } }
