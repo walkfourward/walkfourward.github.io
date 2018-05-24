@@ -8,11 +8,12 @@ html(class="no-js", lang="en-au")
 		meta(name="description"
 			content="FOURWARD offers unrivaled dog walking and training services. Serving Perth, Western Australia.")
 		meta(name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover")
-		link(rel="apple-touch-icon" href="icon.png")
-		link(rel="icon" sizes="32x32" href="favicon-32x32.png")
-		link(rel="icon" sizes="16x16" href="favicon-16x16.png")
-		link(rel="stylesheet" href="css/main.css")
-		link(href="https://fonts.googleapis.com/css?family=Enriqueta:700|Noticia+Text" rel="stylesheet")
+		block links
+			link(rel="apple-touch-icon" href="icon.png")
+			link(rel="icon" sizes="32x32" href="favicon-32x32.png")
+			link(rel="icon" sizes="16x16" href="favicon-16x16.png")
+			link(rel="stylesheet" href="css/main.css")
+			link(href="https://fonts.googleapis.com/css?family=Enriqueta:700|Noticia+Text" rel="stylesheet")
 
 	body
 		<!--[if lt IE 9]>
@@ -52,7 +53,7 @@ html(class="no-js", lang="en-au")
 					a.tel(href="tel:0466962747") 0466962747
 
 					a(data-title="Facebook" href="https://www.facebook.com/walkfourward/")
-						include svg/facebook.svg
+						include svg/facebook-white.svg
 
 
 		main
@@ -70,13 +71,13 @@ html(class="no-js", lang="en-au")
 			.dark
 				p ©2017-2018 by FOURWARD dog walking and leash training.
 
-
-		//-
-			script(
-				src="https://code.jquery.com/jquery-3.2.1.min.js"
-				integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-				crossorigin="anonymous")
-			script.
-				window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\\/script>')
-		script
-			include js/index-min.js
+		block scripts
+			//-
+				script(
+					src="https://code.jquery.com/jquery-3.2.1.min.js"
+					integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+					crossorigin="anonymous")
+				script.
+					window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\\/script>')
+			script
+				include js/index-min.js

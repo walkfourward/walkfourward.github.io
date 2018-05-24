@@ -659,7 +659,7 @@ a.tel:before {
   filter: brightness(75%); }
 
 .social svg {
-  width: 24px;
+  width: 32px;
   padding: 16px; }
 
 body > footer {
@@ -687,7 +687,7 @@ menu {
     pointer-events: none;
     opacity: 0.5; }
   menu svg {
-    width: 2em; }
+    width: 1.5em; }
 
 .category {
   font-size: 2em;

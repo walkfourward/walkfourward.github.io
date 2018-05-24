@@ -1,31 +1,115 @@
 extends layout.pug
 
-
 block vars
 	- var title = 'Gallery'
 	- var current = 'Gallery'
+block append links
+	link(rel="stylesheet" href="/photoswipe/photoswipe.css")
+	link(rel="stylesheet" href="/photoswipe/default-skin/default-skin.css")
+block append scripts
+	script(src="/photoswipe/photoswipe.min.js")
+	script(src="/photoswipe/photoswipe-ui-default.min.js")
+	script.
+		var pswpElement = document.querySelectorAll('.pswp')[0];
+
+		// build items array
+		var items = [
+		    {src: 'img/gallery1.jpg', w: 480, h: 640 },
+		    {src: 'img/gallery2.jpg', w: 334, h: 472 },
+		    {src: 'img/gallery3.jpg', w: 1038, h: 779 },
+		    {src: 'img/gallery4.jpg', w: 1038, h: 692 },
+		    {src: 'img/gallery5.jpg', w: 667, h: 889 },
+		    {src: 'img/gallery6.jpg', w: 1038, h: 779 },
+		    {src: 'img/gallery7.jpg', w: 1038, h: 779 },
+		    {src: 'img/gallery8.jpg', w: 1038, h: 779 },
+		    {src: 'img/gallery9.jpg', w: 667, h: 889 },
+		    {src: 'img/gallery10.jpg', w: 667, h: 889 },
+		    {src: 'img/gallery11.jpg', w: 667, h: 889 },
+		    {src: 'img/gallery12.jpg', w: 1038, h: 779 },
+		    {src: 'img/gallery13.jpg', w: 667, h: 889 },
+		    {src: 'img/gallery14.jpg', w: 1038, h: 779 },
+		    {src: 'img/gallery15.jpg', w: 1038, h: 779 },
+		    {src: 'img/gallery16.jpg', w: 667, h: 889 },
+		    {src: 'img/gallery17.jpg', w: 1037, h: 583 },
+		    {src: 'img/gallery18.jpg', w: 1038, h: 585 },
+		    {src: 'img/gallery19.jpg', w: 1038, h: 779 },
+		    {src: 'img/gallery20.jpg', w: 1038, h: 779 },
+		];
+
+		// define options (if needed)
+		var options = {
+		    // optionName: 'option value'
+		    // for example:
+		    index: 0 // start at first slide
+		};
+
+		// Initializes and opens PhotoSwipe
+		var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+		gallery.init();
+
+
+
+
+
+
 
 block main
 	h1 Meet the Critters!
 	p Feathery, scaley, hooved or tall, we care for creatures great and small.
+	img(src="img/thumbs/gallery1.jpg")
+	img(src="img/thumbs/gallery2.jpg")
+	img(src="img/thumbs/gallery3.jpg")
+	img(src="img/thumbs/gallery4.jpg")
+	img(src="img/thumbs/gallery5.jpg")
+	img(src="img/thumbs/gallery6.jpg")
+	img(src="img/thumbs/gallery7.jpg")
+	img(src="img/thumbs/gallery8.jpg")
+	img(src="img/thumbs/gallery9.jpg")
+	img(src="img/thumbs/gallery10.jpg")
+	img(src="img/thumbs/gallery11.jpg")
+	img(src="img/thumbs/gallery12.jpg")
+	img(src="img/thumbs/gallery13.jpg")
+	img(src="img/thumbs/gallery14.jpg")
+	img(src="img/thumbs/gallery15.jpg")
+	img(src="img/thumbs/gallery16.jpg")
+	img(src="img/thumbs/gallery17.jpg")
+	img(src="img/thumbs/gallery18.jpg")
+	img(src="img/thumbs/gallery19.jpg")
+	img(src="img/thumbs/gallery20.jpg")
+	<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="pswp__bg"></div>
+		<div class="pswp__scroll-wrap">
+			<div class="pswp__container">
+				<div class="pswp__item"></div>
+				<div class="pswp__item"></div>
+				<div class="pswp__item"></div>
+			</div>
+			<div class="pswp__ui pswp__ui--hidden">
+				<div class="pswp__top-bar">
 
-	img(src="img/gallery1.jpg")
-	img(src="img/gallery2.jpg")
-	img(src="img/gallery3.jpg")
-	img(src="img/gallery4.jpg")
-	img(src="img/gallery5.jpg")
-	img(src="img/gallery6.jpg")
-	img(src="img/gallery7.jpg")
-	img(src="img/gallery8.jpg")
-	img(src="img/gallery9.jpg")
-	img(src="img/gallery10.jpg")
-	img(src="img/gallery11.jpg")
-	img(src="img/gallery12.jpg")
-	img(src="img/gallery13.jpg")
-	img(src="img/gallery14.jpg")
-	img(src="img/gallery15.jpg")
-	img(src="img/gallery16.jpg")
-	img(src="img/gallery17.jpg")
-	img(src="img/gallery18.jpg")
-	img(src="img/gallery19.jpg")
-	img(src="img/gallery20.jpg")
+					<div class="pswp__counter"></div>
+					<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+					<button class="pswp__button pswp__button--share" title="Share"></button>
+					<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+					<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+					<div class="pswp__preloader">
+						<div class="pswp__preloader__icn">
+							<div class="pswp__preloader__cut">
+								<div class="pswp__preloader__donut"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+					<div class="pswp__share-tooltip"></div>
+				</div>
+				<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+				</button>
+				<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+				</button>
+				<div class="pswp__caption">
+					<div class="pswp__caption__center"></div>
+				</div>
+			</div>
+		</div>
+	</div>
