@@ -295,7 +295,7 @@ img.thumb {
   transform: translate(-50%,-50%);
 
   max-width:95%;
-  height:95%;
+  max-height:95%;
   z-index:2;
   border:5px solid white;
 }
